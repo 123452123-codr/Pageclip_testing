@@ -6,8 +6,8 @@
     </head>
     <body>
         <form action="https://send.pageclip.co/1I5GybXe7jdJgrQAsYfcOftLjS2h2rJm/Trial" class="pageclip-form" method="post">
-            <input type="text" name="name"/>
-            <input type="email" name="email"/>
+            <input type="text" name="name" id="name"/>
+            <input type="email" name="email" id="email"/>
             <button type="submit" class="pageclip-form__submit">
                 <span>Send</span>
             </button>
@@ -15,11 +15,14 @@
     </body>
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     <script>
-        var form = document.querySelector('.pageclip-form')
-        Pageclip.form(form, {
-            onSubmit: function (event) { },
-            onResponse: function (error, response) { },
-            successTemplate: '<span>Thank you!</span>'
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var data = {
+            name: name,
+            email: email
+        };
+        Pageclip.send('1I5GybXe7jdJgrQAsYfcOftLjS2h2rJm', 'Trial', data, function (error, response) {
+            console.log('saved?', !!error, '; response:', error || response)
         })
     </script>
 </html>
