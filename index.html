@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data submission</title>
+        <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+    </head>
+    <body>
+        <form action="https://send.pageclip.co/ixcAB5ChbtjpCpVHjniUpSAggXjIgTxv/Chat" class="pageclip-form" method="post">
+            <input type="text" name="name"/>
+            <input type="email" name="email"/>
+            <button type="submit" class="pageclip-form__submit">
+                <span>Send</span>
+            </button>
+        </form>
+    </body>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+    <script>
+        var form = document.querySelector('.pageclip-form')
+        Pageclip.form(form, {
+            onSubmit: function (event) { },
+            onResponse: function (error, response) { },
+            successTemplate: '<span>Thank you!</span>'
+        })
+    </script>
+</html>
