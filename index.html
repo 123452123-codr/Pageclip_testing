@@ -18,8 +18,8 @@
         var name = document.getElementById('name');
         var email = document.getElementById('email');
         var data = {
-            name: name,
-            email: email
+            name: name.value,
+            email: email.value
         };
         Pageclip.send('1I5GybXe7jdJgrQAsYfcOftLjS2h2rJm', 'Trial', data, function (error, response) {
             console.log('saved?', !!error, '; response:', error || response)
